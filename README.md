@@ -6,11 +6,11 @@ According to wikipedia: "Given a set of items, each with a weight and a value, d
 
 For this knapsack optimization, I will be applying a dynamic programming algorithm programmed by myself and will compare it to Google's pywrapknapsack_solver which solves this kind of problems.<p>
 
-Dynamic Algorithm:<br/>
+__Dynamic Algorithm:__<br/>
   Time: 169.0 seconds<br/>
   Solution: 124172<p>
 
-Google's pywrapknapsack_solver:<br/>
+__Google's pywrapknapsack_solver:__<br/>
   Time: 0.002 seconds<br/>
   Solution: 124172<br/>
   
