@@ -1,4 +1,15 @@
 
+import numpy as np
+import time
+
+#==DATA========================================
+
+np.random.seed(1)
+values = np.random.randint(1,500,500)
+weights = np.random.randint(1,1000,500)
+capacity = int(np.sum(weights)*.95)
+
+#==ALGORITHM===================================
 
 def knapsack(capacity, values, weights):
     '''
@@ -10,14 +21,12 @@ def knapsack(capacity, values, weights):
         weights: weights of each item (list same size as values)
     Output:
         total: total value of optimal knapsack
-        output_data: list with 1 or 0. 1 if item is selected, 0 if its not. Same order as values/weights
+        result: list with 1 or 0. 1 if item is selected, 0 if its not. Same order as values/weights
     '''
 
     n = len(values)
     W=capacity
 
-    import time 
-    start=time.time()
 
     bag = [0]*(W+1)
     for i in range(W+1): 
@@ -51,18 +60,17 @@ def knapsack(capacity, values, weights):
     print('Total value: ',total)
     print(result)
 
-    end=time.time()
-    print('Time total:',end-start)
-    return total, output_data
+    return total, result
 
-#=========================================================================
+#==SOLUTION===================================
 
-import numpy as np
-
-values = list(np.random.rand(300))
-weights = list(np.random.randint(0,1000,300))
-capacity = int(np.sum(weights)*.8)
+start=time.time()
 
 knapsack(capacity,values,weights)
 
+end=time.time()
+print('Time total:',end-start)
 
+
+#Time total: 169 seconds
+#Solution: 124172
